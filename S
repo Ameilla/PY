@@ -1,0 +1,1059 @@
+Write a program to print the special characters separately and print number of Special characters and spaces in the line?
+Program:
+st=input("Enter teh String: ")
+char=upper=lower=special=num=space=0
+word=1
+sp=""
+for i in st:
+    char=char+1
+    if(i==' '):
+        space=space+1
+    elif(i.isupper()):
+        upper=upper+1
+    elif(i.islower()):
+        lower=lower+1
+    elif(i.isdigit()):
+        num=num+1
+    else:
+        special=special+1
+        sp=sp+i
+print("space= ",space)
+print("num= ",num)
+print("Special= ",special)
+print(sp)
+Write a program to print all the Non-Prime numbers between a and b? Sample Input: A = 12 B = 19 Sample Output 14, 15, 16, 18 Test cases: 1. A = 11, B = 11 2. A = 20, B = 10 3. A = 0, B = 0 4. A = -5, B = 5 5. A = 7, B = -12 
+Program
+a=int(input("A= "))
+b=int(input("B= "))
+for i in range(a+1,b+1):
+    com=0
+    for j in range(1,a+1):
+        if(i%j==0):
+            com=com+1
+    if(com>2):
+        print(i,end=" ")
+Write a program to print the multiplication table or Division table of number m up to n. Get the choice from the user.(Multiplication - 1, Division – 2)
+Program:
+choice=int(input("Choice: "))
+m=int(input("M : "))
+n=int(input("N : "))
+if(choice==1):
+    for i in range(1,n+1):
+        print(f'{i}*{m}={m*i}')
+elif(choice==2):
+    for i in range(1,n+1):
+        print(f'{i}/{m}={m/i}')
+else:
+    print("Invalid choice...")
+
+Write a program to read the numbers until -1 is encountered. Find the average of positive numbers and negative numbers entered by user.Restrict the decimal upto 2 digits. 
+Sample Input: 
+Enter -1 to exit… 
+Enter the number: 7 
+Enter the number: -2 
+Enter the number: 9 
+Enter the number: -8 
+Enter the number: -6 
+Enter the number: -4 
+Enter the number: 10 
+Enter the number: -1 
+Sample Output:
+The average of negative numbers is: -5.00 
+The average of positive numbers is : 8.67
+print("Enter -1 to exit... ")
+a=[]
+b=[]
+while True:
+    n=int(input("Enter the number "))
+    if(n==-1):
+        break
+    if(n>0):
+        a.append(n)
+    else:
+        b.append(n)
+
+apos=(sum(a)/len(a))
+bneg=(sum(b)/len(b))
+print("The average of negative number is: ",bneg)
+print("The average of positive number is: ",apos)
+
+Program to remove duplicates numbers entirely from the sorted array Sample Input: 
+Array = {15, 14, 25, 14, 32, 14, 31} 
+Sample Output: 
+Sorted Array = {15, 25, 31, 32}
+
+
+Write a pr-+ogram to print n non composite numbers after nth Prime number 
+Sample Input: 
+N = 5 
+Sample Output: 
+5th Prime number is 11 
+5 Non Composite numbers after 11 are: 13, 17, 19, 23, 29 
+Test cases: 
+1.N = P 4 
+2. N = 0 
+3. N = -4 
+4. N = 11 
+5. N = 7.2
+n=100
+N=int(input("N = "))
+p=[]
+c=[]
+for i in range(1,n+1):
+    pri=0
+    for j in range(2,n+1):
+        if(i%j==0):
+            pri=pri+1
+    if(pri==1):
+        p.append(i)
+
+x=p[N-1]
+print(x)
+for i in range(x,n+1):
+    pri=0
+    for j in range(2,n+1):
+        if(i%j==0):
+            pri=pri+1
+    if(pri==1):
+        c.append(i)
+print(c[1:N+1])
+
+Write a program to print the Inverted Full Pyramid star pattern? 
+Program
+n=int(input("Enter n value: "))
+for i in range(n,0,-1):
+    for j in range(n-i):
+        print(" ",end="")
+    for k in range(2*i-1):
+            print("*",end="")
+    print()
+
+Write a program to read a character until a * is encountered. Also count the number of uppercase, lowercase, Special characters and numbers entered by the users. 
+Sample Input: 
+Enter * to exit… 
+Enter any character: W 
+Enter any character: d 
+Enter any character: A 
+Enter any character: G 
+Enter any character: ^ 
+Enter any character: H 
+Enter any character: * 
+Sample Output: 5 
+Total count of lower case:2 
+Total count of upper case:4 
+Total count of Special Characters =0 
+Total count of numbers =0 
+Test cases: 
+1. 1,7.2,6,9,5 
+2. S, Q, l, K,7, j, M 
+3. M, j, L, &, @, G 4. D, K, Ice, 6.2, L, * 
+5. *, K, A, e, 1, 8, %, *
+print("Enter * to exit... ")
+string=[]
+while True:
+    ch=input("Enter any character: ")
+    if(ch=='*'):
+        break
+    string.append(ch)
+lower=upper=schar=digit=0
+for i in string:
+    if(i.islower()):
+        lower=lower+1
+    elif(i.isupper()):
+        upper=upper+1
+    elif(i.isdigit()):
+        digit=digit+1
+    else:
+        schar=schar+1
+print("Lower case= ",lower)
+print("Upper case= ",upper)
+print("Digit = ",digit)
+print("Special Character= ",schar)
+
+Find the Mean, Median and Mode of the array of numbers?
+Sample Input: 
+Array of elements = {16, 18, 27, 16, 23, 21, 19} 
+Sample Output: 
+Mean = 20 
+Median = 19 
+Mode = 16 
+Test cases: 
+1. Array of elements = {26, 28, 37, 26, 33, 31, 29} 
+2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19} 
+3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 
+
+
+
+
+
+Find the factorial of n? Sample Input: 
+N = 4 
+Sample Output: 
+4 Factorial = 24 
+Test cases: 
+1. N = 0 
+2. N = -5 
+3. N = 1 
+4. N = 0.4 
+5. N = 3A
+4. Array of elements = {20, 18, 18, 27, 16, 27, 27, 19, 20} 
+5. Array of elements = {1000, 100, 1000, 100, 1000, 100, 1000, 100, 1000}
+N=(input("N = "))
+if(N.isdigit()):
+    fact=1
+    for i in range(1,int(N)+1):
+        fact=fact*i
+    print("%d Factorial = %d"%(int(N),fact))
+else:
+    print("Enter the Number.....")
+
+Python Program to create a list of all numbers in a range which are perfect squares and the sum of the digits of the number is less than 10. 
+Sample Input & Output: 
+Enter lower range: 1 
+Enter upper range: 40 
+[1, 4, 9, 16, 25, 36] 
+Test case: 7 
+1.Enter lower range: 50 
+Enter upper range: 100 
+2.Enter lower range: 5 
+Enter upper range: 8 
+3.Enter lower range: 10 
+Enter upper range: 5 
+4.Enter lower range: 500 
+Enter upper range: 500 
+5.Enter lower range: 0 
+Enter upper range: -100
+lower=int(input("Enter Lower: "))
+upper=int(input("Enter Upper: "))
+li=[]
+
+for i in range (lower,upper+1):
+    x=i*i
+    y=x
+    rem=0
+    while(y>0):
+        n=y%10
+        rem=rem+n
+        y=y//10
+    
+    if(rem<10):
+        li.append(x)
+
+print(li)
+
+
+Write a program to print the following pattern 
+Sample Input: 
+Enter the Character to be printed: ^ 
+Max Number of time printed: 3 
+^ 
+^ ^ 
+^ ^ ^
+ch=input("Enter the character to print ")
+n=int(input("Max Number of time printed: "))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(ch,end="")
+    print()
+
+Find the year of the given Anniversary is leap year or not. If leap year then print the next Anniversary, if not leap year then print the previous Anniversary. 
+Sample Input: 
+Enter Date: 04/11/1947 
+Sample Output: 
+Given Anniversary Year: Non Leap Year. 
+Anniversary Date: 04/11/1946 
+Test cases: 
+1. 04/11/19.47 
+2. 11/15/1936 
+3. 31/45/1996 
+4. 64/09/1947 
+5. 00/00/2000
+ann=input("Enter anniversary date dd/mm/yyyy ")
+year=int(ann[-4:])
+leap=0
+if(year%400==0):
+    leap=1
+elif(year%4==0 and year%100!=0):
+    leap=1
+else:
+    leap=0
+if(leap==1):
+    year=year+1
+    ann=ann[0:6]+str(year)
+    print("Given Anniversary year: Leap year")
+    print("Anniversary date ",ann)
+else:
+    year=year-1
+    ann=ann[0:6]+str(year)
+    print("Given Anniversary year: Non leap year")
+    print("Anniversary date ",ann)
+
+Find the number of factors for the given number and print the 1st N factors of the given number. 
+Sample Input: 
+Given number: 100 
+N: 4 
+Sample Output: 
+Number of factors = 9 
+1st 4 factors are: 1, 2, 4, 5 
+Test cases: 
+1. 343, N = 5 
+2. 1080, N = 2 
+3. -243, N = 3 
+4. 101010, N = 0 
+5. 0, N = 2
+num=int(input("Given Number: "))
+N=int(input("N: "))
+fact=0
+fa=[]
+for i in range(1,num+1):
+    if(num%i==0):
+        fact=fact+1
+        fa.append(i)
+print("Number of factors = ",fact)
+print("1st %d factors are :"%(N),fa[0:N])
+
+Write a program to calculate the factorial of number using recursive function. 
+Sample Input & Output: 
+Enter the value of n: 6 
+Sample Input & Output: 
+The factorial of 6 is: 720 
+Test cases: 
+1. N = 0 
+2. N = -5 
+3. N = 1 
+4.N = M 5. N = %
+def fact(n):
+    if(n==1):
+        return 1
+    else:
+        return n*fact(n-1)
+
+n=int(input("Enter the value of n: "))
+x=fact(n)
+print("The factorial of %d is: %d"%(n,x))
+
+Python Program to Find the Nth Largest Number in a List 
+Sample Input: 
+List : {14, 67, 48, 23, 5, 62} 
+N = 4 
+Sample Output: 
+4th Largest number: 23 
+Test cases: 
+1. N = 0 
+2. N = -5 
+3. N = 1 
+4. N = M 
+5. N = %
+List=[14,67,48,23,5,62]
+
+List.sort()
+print(List)
+N=int(input("N = "))
+print(N,"Largest number:",List[N])
+
+Write a program to print the given number is Perfect number or not? 
+Sample Input: 
+Given Number: 6 
+Sample Output: 
+Its a Perfect Number 
+Test cases: 
+1. 17 
+2. 26! 
+3. 143 
+4. 84.1 
+5. -963
+n=int(input("Given Number: "))
+num=n
+sum=0
+for i in range(1,num):
+    if(num%i==0):
+        sum=sum+i
+if(sum==n):
+    print("Its a Perfect Number")
+else:
+    print("Not a perfect Number")
+Write a program to print the number of vowels and number of consonants in the given statement and which is maximum? 
+Sample Input: 
+Saveetha School of Engineering 
+Sample Output: 
+Number of vowels = 12 
+Number of Consonants = 15 
+Test cases: 
+1.India is my country 
+2.All are my brothers and sisters 10 
+3.Why dry sky 
+4.Shy Try Cry 
+5.EDUCATION
+string=input("Enter the string: ")
+vow=0
+con=0
+for i in string:
+    if(i.isalpha()):
+        if(i == 'a' or i == 'e' or i == 'i' or i == 'o'
+           or i == 'u'or i == 'A' or i == 'E' or i == 'I'
+           or i == 'O' or i == 'U'):
+            vow=vow+1
+        else:
+            con=con+1
+else:
+    print("Enter the string")
+
+print("vowels = ",vow)
+print("Consonants = ",con)
+
+Write a program to print symbol pattern? 
+Get the symbol from user and choices from the user. 
+Choices: 
+Pattern Type: Hollow or Full 
+Pattern Size: Square or Rectangle
+
+
+
+Write a program to print unique permutations of a given number 
+Sample Input: 
+Given Number: 143 
+Sample Output: 
+Permutations are: 
+134 
+143 
+314 
+341 
+413 
+431 
+Test cases: 
+1. 0 
+2. 111 
+3. 505 
+4. -143 
+5. -598
+def permute(s, answer):
+    if (len(s) == 0):
+        print(answer, end = " ")
+        return
+    for i in range(len(s)):
+        ch = s[i]
+        left_substr = s[0:i]
+        right_substr = s[i + 1:]
+        rest = left_substr + right_substr
+        permute(rest, answer + ch)
+answer = ""
+s = input("Enter the string : ")
+print("All possible strings are : ")
+permute(s, answer)
+
+Python Program to Create a List of Tuples with the First Element as the Number and Second Element as the Square of the Number. 
+Sample Input: 
+Enter the lower range:45 
+Enter the upper range:49 
+Sample Output: 
+[(45, 2025), (46, 2116), (47, 2209), (48, 2304), (49, 2401)] 
+Test case: 
+1.Enter lower range: 50 
+Enter upper range: 100 
+2.Enter lower range: 5 
+Enter upper range: 8 
+3.Enter lower range: 10 
+Enter upper range: 5 
+4.Enter lower range: 500 
+Enter upper range: 500 
+5.Enter lower range: 0 
+Enter upper range: -100
+l1=[]
+n1=int(input("enter a lower number:"))
+n2=int(input("enter a upper number:"))
+for i in range(n1,n2+1):
+    s=(n1,n1**2)
+    l1.append(s)
+    n1=n1+1
+    
+print(l1)
+
+Write a program to print the Fibonacci series. 
+Sample Input: 
+Enter the n value: 6 
+Sample Output: 
+0 1 1 2 3 5 
+Test Condition: Implement negative Fibonacci series
+n=int(input("Enter a Number "))
+n1=0
+n2=1
+for i in range (0,n):
+    n=n1+n2
+    print(n1,end=" ")
+    n1=n2
+    n2=n
+Write a program to print the below pattern 
+1 
+2 2 
+3 3 3 
+4 4 4 4
+n=int(input("Enter n value: "))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(i,end="")
+    print()
+Write a program to find the square, cube of the given decimal number 
+Sample Input: 
+Given Number: 0.6 
+Sample Output: 
+Square Number: 0.36 
+Cube Number:0.216 
+Test cases: 
+1. 12 
+2. 0 
+3. -0.5 
+4. 14.25 
+5. -296
+n=float(input("Enter the number: "))
+square=n*n
+cube=n*n*n
+print("Square = ",square)
+print("Cube = ",cube)
+    
+Write a program to convert the Binary to Decimal, Octal 
+Sample Input: 
+Given Number: 1101 
+Sample Output: 
+Decimal Number: 13 Octal:15 
+Test cases: 
+1. 211 
+2. 11011 
+3. 22122 
+4. 111011.011 
+5. 1010.0101
+
+
+Python Program to Remove the Duplicate Items from a List Sample Input: 
+Enter the number of elements in list:7 
+Enter element1:10 
+Enter element2:20 14 
+Enter element3:20 
+Enter element4:30 
+Enter element5:40 
+Enter element6:40 
+Enter element7:50 
+Sample Output: 
+Non-duplicate items: [10, 20, 30, 40, 50]
+
+Find the maximum of three integers using looping. 
+Sample Input: 
+Given Numbers: 1101, 1011, 1001 
+Sample Output: 
+Maximum Number: 1101
+
+
+Write a program to print the first n perfect numbers. (Hint Perfect number means a positive integer that is equal to the sum of its proper divisors) 
+Sample Input: 
+N = 3 
+Sample Output: 
+First 3 perfect numbers are: 6 , 28 , 496
+n=int(input("Enter the value of N : "))
+count=0
+a=1;
+while count<n:
+    sum=0
+    for b in range (1,(a//2)+1):
+        if a%b==0:
+            sum=sum+b
+    if sum==a:
+        print(a ,end=' ')
+        count+=1
+    a+=1
+
+Write a program to print the below pattern?
+    1 
+   1 1 
+  1 2 1 
+ 1 3 3 1 
+1 4 6 4 1
+n=int(input("Enter n value: "))
+k=1
+for i in range(1,n+1):
+    for sp in range(1,n-i+1):
+        print(" ",end="")
+    for j in range(0,i):
+        if(j==0 or i==0):
+            k==1
+        else:
+            k=k*(i-j)//j
+        print(k,end=" ")
+    print()
+Find the LCM and GCD of n numbers? Sample Input: 
+N value = 2 Number 1 = 16 
+Number 2 = 20 Sample Output: LCM = 80 
+GCD = 4 
+Test cases: 
+1. N = 3, {12, 25, 30} 
+2. N = 2, {52, 25, 63} 
+3. N = 3, {17, 19, 11} 
+4. N = -2, {52, 60}
+
+#two numbers
+a=int(input("Enter First Number: "))
+b=int(input("Enter Second Number: "))
+for i in range(1,a+1):
+    if(a%i==0 and b%i==0):
+        gcd=i
+print("GCD of %d and %d is %d"%(a,b,gcd))
+lcm=(a*b)/gcd
+print("LCM of %d and %d is %d"%(a,b,lcm))
+
+#three numbers
+a=int(input("Enter First Number: "))
+b=int(input("Enter Second Number: "))
+c=int(input("Enter Third Number: "))
+for i in range(1,a+1):
+    if(a%i==0 and b%i==0 and c%i==0):
+        gcd=i
+print("GCD of %d, %d and %d is %d"%(a,b,c,gcd))
+lcm=(a*b*c)/gcd
+print("LCM of %d, %d and %d is %d"%(a,b,c,lcm))
+
+Write a program to print the total amount available in the ATM machine with the conditions applied. 
+Total denominations are 2000, 500, 200, 100, get the denomination priority from the user and the total number of notes from the user to display the total available balance to the user Sample Input: 
+Enter the 1st Denomination: 500 
+Enter the 1st Denomination number of notes: 4 Enter the 2nd Denomination: 100 
+Enter the 2nd Denomination number of notes: 20 Enter the 3rd Denomination: 200 
+Enter the 3rd Denomination number of notes: 32 Enter the 4th Denomination: 2000 
+Enter the 4th Denomination number of notes: 1 Sample Output: 
+Total Available Balance in ATM: 12400 
+Test Cases: 
+5 Hidden Test cases (Think Accordingly based on Denominations)
+d1=int(input("Enter the 1st Denomination: "))
+n1=int(input("Enter the 1st Denomination number of notes: "))
+d2=int(input("Enter the 2nd Denomination: "))
+n2=int(input("Enter the 2nd Denomination number of notes: "))
+d3=int(input("Enter the 3rd Denomination: "))
+n3=int(input("Enter the 3rd Denomination number of notes: "))
+d4=int(input("Enter the 4th Denomination: "))
+n4=int(input("Enter the 4th Denomination number of notes: "))
+total=(d1*n1)+(d2*n2)+(d3*n3)+(d4*n4)
+print("Total Available Balance in ATM: %d"%total)
+
+Write a program to find whether the person is eligible for vote or not. If that particular person is not eligible, then print how many years are left to be eligible. If that particular person is eligible then print they are Normal Citizen or Senior Citizen voter. 
+Sample Input: 
+Enter your age: 
+7 
+Sample output: 
+You are allowed to vote after 11 years 
+Test cases: 
+1. 25 
+2. Eighteen 3. 72 
+4. -18 
+5. 14.5
+age=int(input("Enter your age: "))
+if(age>18):
+    print("You are eligible for vote")
+else:
+    x=18-age
+    print("You are allowed to vote after %d years"%x)
+            
+Write a program to reverse a number using loop?(Get the input from user) 
+Sample Input: 
+Number: 14567 Sample Output: 
+Reverse Number: 76541 Test cases: 
+1. -45721 
+2. 000 
+3. AD1947 
+4. !@#$% 
+5. 145*999=144855
+x=int(input("Enter the number"))
+rev=0
+while(x>0):
+    rem=x%10
+    rev=(rev*10)+rem
+    x=x//10
+print("Reverse = %d"%rev)
+
+def reverse(text):
+    str=""
+    i=len(text)-1
+    while(i>=0):
+        str=str+text[i]
+        i=i-1
+    return str
+string=input("Enter the text")
+print(reverse(string))
+
+Write a program to check the entered user name is valid or not. Get both the inputs from the user. 
+Sample Input: 
+Enter the user name: College@786 Reenter the user name: Saveetha@786 
+Sample Output: 
+User name is Invalid
+name1=input("Enter the user name: ")
+name2=input("Reenter teh user name: ")
+if(name1==name2):
+    print("valid")
+else:
+    print("Invalid")
+Write a program to reverse a word using loop? (Not to use inbuilt functions) 
+Sample Input: 
+String: TEMPLE Sample Output: 
+Reverse String: ELPMET Test cases: 
+1. SIGN UP 
+2. AT-LEAST 3. 1245 
+4. !@#$% 
+5. 145*999=144855
+str1=input()
+st=" "
+for i in str1:
+    st=i+st
+print(st)
+
+Write a program to print the Inverted Full Pyramid pattern?
+n=int(input("Enter n value: "))
+for i in range(n,0,-1):
+    for j in range(n-i):
+        print(" ",end="")
+    for k in range(2*i-1):
+        print("*",end="")
+    print()
+Write a program to print the number of negative numbers in the list of numbers 
+Sample Input: 
+List of elements = {16, -18, 27, -16, 23, -21, 19} 
+Sample Output: 
+Number of negative numbers in List of elements = 3 
+Test cases: 
+1. List of elements = {-26, 28, 37, -26, 33, -31, -29} 
+2. List of elements = {1.6, 1.8, 2.7, -1.6, 2.3, -2.1, .19} 
+3. List of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 
+4. List of elements = {-16, 2.8, -7, -1.5, 2.8, -2.8, -.19} 
+5. List of elements = {-160, -160, -180, -270, -160, -230, -210, 1-90, 0}
+n=int(input("Enter the size of the array: "))
+list1=[]
+for i in range (n):
+    x=eval(input())
+    list1.append(x)
+print(list1)
+count=0
+for num in list1:
+    if num < 0:
+        count=count+1
+print("Number of negative numbers in List of elements =",count)
+
+Write a program to arrange the digits of the number in ascending or descending, get the choice from user.{Note: A - Ascending, D - Descending , B - Both} 
+Sample Input: 
+Enter the number : 6581 
+Enter your choice (A/D/B): B 
+Sample Output: 
+Ascending order = 1 5 6 8 
+Descending order = 8 6 5 1 
+Test cases: 
+1. 12121212 
+2. 12345678 
+3. 98784565 
+4.ADSSDDR 
+5.JK78SD98
+x=int(input("Enter the number: "))
+choice=input("Enter your choice (A/D/B): ")
+a=[]
+b=[]
+while(x!=0):
+    n=x%10
+    a.append(n)
+    b.append(n)
+    x=x//10
+if(choice=='A'):
+    a.sort()
+    print("Ascending Order =",a)
+elif(choice=='D'):
+    b.sort(reverse=True)
+    print("Descending Order =",b)
+elif(choice=='B'):
+    a.sort()
+    print("Ascending Order =",a)
+    b.sort(reverse=True)
+    print("Descending Order =",b)
+Write a program to print all the composite numbers between a and b? 
+Sample Input: 
+A = 12 
+B = 19 
+Sample Output 14, 15, 16, 18 
+Test cases: 
+1. A = 11, B = 11 
+2. A = 20, B = 10 
+3. A = 0, B = 0 
+4. A = -5, B = 5 
+5. A = 7, B = -12
+# a=smaller
+# b=larger
+
+a=int(input("Enter the value of a and b "))
+b=int(input())
+for i in range (a+1,b+1):
+    com=0
+    for j in range(1,b+1):
+        if(i%j==0):
+            com=com+1
+    if(com>2):
+        print(i ,end=" ")
+        
+        
+# a=larger
+# b=smaller
+
+a=int(input("Enter the value of a and b "))
+b=int(input())
+for i in range (a-1,b,-1):
+    com=0
+    for j in range(a+1,1,-1):
+        if(i%j==0):
+            com=com+1
+    if(com>2):
+        print(i ,end=" ")
+
+Write a program to print vowels and consonants from the given word in alphabetical order and print which is maximum, if both vowel count and consonant count is equal then prints Equal? 
+Sample Input: 
+Enter the word: EDUCATION 
+Sample Output: 
+Vowels in alphabetical order: A, E, I, O, U 
+Consonants in alphabetical order: C, D, N, T 
+Maximum Count: Vowels 
+Test cases: 
+1.HYPOTHECATION 
+2.MATRICULATION 
+3.MANIPULATION 
+4.SEDIMENTATION 
+5.EXPERIMENTATION
+string=input("Enter the string: ")
+vow=0
+v=[]
+c=[]
+con=0
+for i in string:
+    if(i.isalpha()):
+        if(i == 'a' or i == 'e' or i == 'i' or i == 'o'
+           or i == 'u'or i == 'A' or i == 'E' or i == 'I'
+           or i == 'O' or i == 'U'):
+            vow=vow+1
+            v.append(i)
+        else:
+            con=con+1
+            c.append(i)
+
+v.sort()
+c.sort()
+if(vow==con):
+    print("Equal")
+elif(vow>con):
+    print("Maximum Count: Vowels")
+else:
+    print("Maximum Count: Consonants")
+print("Vowels in alphabetical order:",v)
+print("Consonants in aphabetical order:",c)
+
+Write a program to print the all Odd numbers and even numbers in between M and N? 
+Sample Input: 
+M = 6 
+N = 15 
+Sample Output: 
+All Odd Numbers = 7,9,11,13 
+All Even Numbers = 8,10,12,14 
+Test cases: 
+1. M = 100, N = 100 
+2. M = 500, N = 100 
+3. M = -5, N = 4 
+4. M = 72, N = -72 
+5. M = 0, N = 0
+even=0
+odd=0
+o=[]
+e=[]
+m=int(input("enter m value: "))
+n=int(input("enter n value: "))
+for i in range(m,n):
+    if(i%2==0):
+        even=even+1
+        e.append(i)
+    else:
+        odd=odd+1
+        o.append(i)
+print(even)
+print(e)
+print(odd)
+print(o)
+
+Write a program to calculate tax given the following conditions: 
+a.If income is less than or equal to 1,50,000 then no tax 
+b.If taxable income is 1,50,001 – 3,00,000 then charge 10% tax for the remaining slab 
+c.If taxable income is 3,00,001 – 5,00,000 then charge 20% tax for the remaining slab 
+d.If taxable income is above 5,00,001 then charge 30% tax for the remaining slab 
+Sample Input: 
+Enter the income: 200000 
+Sample Output: 
+Tax= 5000 
+Test cases: 
+1. 400700 
+2. 2789239 
+3. 150000 
+4. 00000 
+5. -125486
+income=int(input("Enter the income: "))
+if(income<150000):
+    print("No Tax");
+elif(income>150001 and income<300000):
+    tax=income*0.1
+    print("Tax=",tax)
+elif(income>300001 and income<500000):
+    tax=income*0.2
+    print("Tax=",tax)
+elif(income>500001):
+    tax=income*0.3
+    print("Tax=",tax)
+
+Write a program to print the number of Odd numbers and number of even numbers in between the limit M and N? 
+Sample Input: 
+M = 60 
+N = 300 
+Sample Output: 
+Number of Odd Numbers = 120 
+Number of Even Numbers = 119 
+Test cases: 
+1. M = 100, N = 100 
+2. M = 500, N = 100 
+3. M = -5, N = 4 
+4. M = A, N = 6 
+5. M = 12, N = -12
+M=int(input("M = "))
+N=int(input("N = "))
+even=0
+odd=0
+for i in range(M+1,N):
+    if(i%2==0):
+        even=even+1
+    else:
+        odd=odd+1
+
+print("Number of Odd Numbers =",odd)
+print("Number of Even Number =",even)
+
+
+
+
+        
+                 Write a program to print number of factors and to print nth factor of the given number. 
+Sample Input: 
+Given Number: 100 
+N = 4 
+Sample Output: 
+Number of factors = 9 
+4th factor of 100 = 5 
+Test Cases: 
+1.Given Number = 512 , N = 6 
+2.Given Number = 343 , N = 7 
+3.Given Number = 1024 , N = 0 
+4.Given Number = -6561 , N = 3 
+5.Given Number = 0 , N = 2
+num=int(input("Given Number: "))
+N=int(input("N: "))
+fact=0
+fa=[]
+for i in range(1,num+1):
+    if(num%i==0):
+        fact=fact+1
+        fa.append(i)
+print("Number of factors = ",fact)
+print("%d factor of %d = %d"%(N,num,fa[N-1]))
+
+Write a program using function to calculate the simple interest. Suppose the customer is a senior citizen. She is being offered 15 percent rate of interest; he is being offered 12 percent rate of interest for all other customers, the ROI is 10 percent. 
+Sample Input: 
+Enter the principal amount: 200000 
+Enter the no of years: 3 
+Gender (m/f): m 
+Is customer senior citizen (y/n): n 
+Sample Output: 
+Interest: 60000 
+Test Cases: 
+1.Principal: 2000 , Years: 0, Gender: m, Senior: y 
+2.Principal: 20000 , Years: -2 , Gender: f, Senior: y 
+3.Principal: -2000 , Years: 2, Gender: m, Senior: n 
+4.Principal: 2 , Years: 2000, Gender: k, Senior: y 
+5.Principal: 1000 , Years: 5, Gender: f, Senior: s
+pri_amt=int(input("Enter the principle amount: "))
+year=int(input("Enter the no of years: "))
+interest=0
+gender=input("Gender (m/f): ")
+sen_cit=input("Is customer senior citizen(y/n): ")
+
+if(sen_cit=='y' or sen_cit=='Y'):
+    interest=(pri_amt*year*1.2)//100
+    print(interest)
+elif(sen_cit=='n' or sen_cit=='N'):
+    interest=(pri_amt*year*10)//100
+    print(interest)
+else:
+    print("Invalid...!")
+Write a program to find the Non composite number in the array of numbers 
+Sample Input: 
+Array of elements = {26, 28, 47, 26, 43, 51, 29} 
+Sample Output: 
+Prime numbers in Array elements = {47, 43, 29} 
+Test cases: 
+1.Array of elements = {26, 28, 37, 26, 33, 31, 29} 
+2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19} 
+3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 
+4.Array of elements = {20, 18, 18, 27, 27, 27, 190, 20} 
+5. Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
+
+Write a program to arrange the letters of the word alphabetically in Normal order and reverse order 
+Sample Input: 
+Enter the word : MOSQUE Sample Output: 
+Alphabetical Order Normal: E M O Q S U Alphabetical Order Reverse: U S Q O M E Test Case: 
+1.SAPONIFICATION 
+2.MEMORANDUM 
+3.DISTRIBUTION 
+4.SATISFACTION 
+5.PROPAGATION
+stri=input()
+x=[]
+y=[]
+for i in stri:
+    x.append(i)
+    y.append(i)
+print(x)
+x.sort()
+y.sort(reverse=True)
+print("Alphabetical Order Normal: ",x)
+print("Alphabetical Order Reverse: ",y)
+
+Write a program to find the square root of a perfect square number(print both the positive and negative values) 
+Sample Input: 
+Enter the number : 6561 
+Sample Output: 
+Square Root: 81, -81 
+Test cases: 
+1. 1225 
+2. 9801 
+3. 1827 
+4. -100 
+5. 0
+n=int(input())
+sqrt=n**0.5
+print(sqrt)
+print(-sqrt)
+Write a program to find the sum of digits of N digit number (sum should be single digit) 
+Sample Input: 
+Enter N value : 3 
+Enter 3 digit number: 143 
+Sample Output: 
+Sum of 3 digit number: 8 
+Test cases: 
+1. N = 2, 158 
+2. N = 3, 14 
+3. N = 4, 0148 
+4. N = 1, 0004 
+5. N = 4, 7263
+n=int(input())
+sum=0
+while(n!=0):
+    rem=n%10
+    sum=sum+rem
+    n=n//10
+print(sum)
+
+Find the maximum of three integers using looping. 
+Sample Input: 
+Given Numbers: 1101, 1011, 1001 
+Sample Output: 
+Maximum Number: 1101
+
